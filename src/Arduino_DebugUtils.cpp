@@ -88,6 +88,30 @@ void Arduino_DebugUtils::print(int const debug_level, const __FlashStringHelper 
   va_end(args);
 }
 
+void Arduino_DebugUtils::print(int const debug_level, bool const value) {
+  print(debug_level, "%d", value);
+}
+
+void Arduino_DebugUtils::print(int const debug_level, byte const value) {
+  print(debug_level, "%d", value);
+}
+
+void Arduino_DebugUtils::print(int const debug_level, char const value) {
+  print(debug_level, "%c", value);
+}
+
+void Arduino_DebugUtils::print(int const debug_level, double const value) {
+  print(debug_level, "%f", value);
+}
+
+void Arduino_DebugUtils::print(int const debug_level, float const value) {
+  print(debug_level, "%f", value);
+}
+
+void Arduino_DebugUtils::print(int const debug_level, int const value) {
+  print(debug_level, "%d", value);
+}
+
 /******************************************************************************
    PRIVATE MEMBER FUNCTIONS
  ******************************************************************************/

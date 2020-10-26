@@ -18,6 +18,12 @@
 #ifndef ARDUINO_DEBUG_UTILS_H_
 #define ARDUINO_DEBUG_UTILS_H_
 
+#define DEBUG(...) Debug.print(DBG_DEBUG, __VA_ARGS__)
+#define WARNING(...) Debug.print(DBG_WARNING, __VA_ARGS__)
+#define INFO(...) Debug.print(DBG_INFO, __VA_ARGS__)
+#define DEBUG(...) Debug.print(DBG_DEBUG, __VA_ARGS__)
+#define VERBOSE(...) Debug.print(DBG_VERBOSE, __VA_ARGS__)
+
 /******************************************************************************
    INCLUDE
  ******************************************************************************/
@@ -58,6 +64,12 @@ class Arduino_DebugUtils {
 
     void print(int const debug_level, const char * fmt, ...);
     void print(int const debug_level, const __FlashStringHelper * fmt, ...);
+    void print(int const debug_level, bool const value);
+    void print(int const debug_level, byte const value);
+    void print(int const debug_level, char const value);
+    void print(int const debug_level, double const value);
+    void print(int const debug_level, float const value);
+    void print(int const debug_level, int const value);
 
 
   private:
